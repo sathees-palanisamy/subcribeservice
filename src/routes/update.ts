@@ -5,7 +5,7 @@ import {NotFoundError} from '../errors/not-found-error';
 import {requireAuth} from '../middlewares/require-auth';
 import {NotAuthorizedError} from '../errors/not-authorized-error';
 
-import { Subcribe } from '../models/Subcribe';
+import { Subcribe } from '../models/subcribe';
 
 const router = express.Router();
 

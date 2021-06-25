@@ -30,7 +30,9 @@ export const currentUser = (
       keys.JWT_KEY!
     ) as UserPayload;
     req.currentUser = payload;
-  } catch (err) {}
+  } catch (err) {
+    console.log('err:' + err);
+  }
 
   next();
 };

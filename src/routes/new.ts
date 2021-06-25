@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
 import { requireAuth } from '../middlewares/require-auth';
 import { validateRequest } from '../middlewares/validate-request';
-import { Subcribe } from '../models/Subcribe';
+import { Subcribe } from '../models/subcribe';
 
 const router = express.Router();
 

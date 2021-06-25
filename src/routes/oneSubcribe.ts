@@ -5,16 +5,14 @@ import { validateRequest } from '../middlewares/validate-request';
 
 const router = express.Router();
 
-router.get('/api/subcribes/:userId',validateRequest,async (req: Request, res: Response) => {
-  console.log('req.params.userId:' + req.params.userId);
-  const subcribe = await Subcribe.find({userId: req.params.userId});
+router.get('/api/subcribe',validateRequest,async (req: Request, res: Response) => {
+  const subcribe = await Subcribe.find({userId: req.currentUser!.email});
 
   if (!subcribe) {
     throw new NotFoundError();
   }
 
-  console.log('extracted sucessfully:' + subcribe);
   res.send(subcribe);
 });
 
-export { router as showsubcribeRouter };
+export { router as oneSubcribeRouter };

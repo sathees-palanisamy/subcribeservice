@@ -9,6 +9,7 @@ import { createSubcribetRouter } from './routes/new';
 import { showsubcribeRouter } from './routes/show';
 import { indexSubcribeRouter } from './routes/index';
 import { updateSubcribeRouter } from './routes/update';
+import { oneSubcribeRouter } from './routes/oneSubcribe';
 
 const app = express();
 app.set('trust proxy', true);
@@ -25,6 +26,7 @@ app.use(createSubcribetRouter);
 app.use(showsubcribeRouter);
 app.use(indexSubcribeRouter);
 app.use(updateSubcribeRouter);
+app.use(oneSubcribeRouter);
 
 app.all('*', async (req, res) => {
   throw new NotFoundError();
